@@ -10,7 +10,7 @@ const createTask = async(task) => {
     const dateUTC = new Date(Date.now()).toUTCString();
     const query = 'INSERT INTO tasks(title, status, created_at, updated_at) VALUES (?,?,?,?)';
 
-    const [createdTask] = await connection.execute(query, [title, 'pendente', dateUTC, dateUTC]);
+    const [createdTask] = await connection.execute(query, [title, 'pending', dateUTC, dateUTC]);
 
     return {insertId: createdTask.insertId};
 }
