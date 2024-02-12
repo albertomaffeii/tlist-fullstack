@@ -4,15 +4,15 @@ Esempio dell'API de To Do List elaborado com NODE.js e base de dados MySql.
 
 ## Istruzioni di Installazione
 
-01. Clone il repository.
-02. Installa le dipendenze con `npm init -y `.
-03. Installa: `npm install express`.
-04. Installa: `npm install mysql2`.
-05. Installa: `npm install nodemon -D`.
-06. Installa: `npx eslint --init`.
-07. Installa: `npm install cors`.
-08. Installa: `npm install dotenv`.
-09. Use: `Docker`.
+1.  Clone il repository.
+2.  Installa le dipendenze con `npm init -y `.
+3.  Installa: `npm install express`.
+4.  Installa: `npm install mysql2`.
+5.  Installa: `npm install nodemon -D`.
+6.  Installa: `npx eslint --init`.
+7.  Installa: `npm install cors`.
+8.  Installa: `npm install dotenv`.
+9.  Use: `Docker`.
 10. Use: `npm install`.
 
 ## Configurazione
@@ -50,18 +50,16 @@ CREATE TABLE tasks (
 
 **4. Explicação das colunas:**
 
-* **id:** Identificador único da tarefa (auto-incrementado)
-* **title:** Título da tarefa
-* **description:** Descrição da tarefa
-* **status:** Status da tarefa (pendente, em andamento, concluído)
-* **created_at:** Data e hora de criação da tarefa
-* **updated_at:** Data e hora da última atualização da tarefa
+-   **id:** Identificador único da tarefa (auto-incrementado)
+-   **title:** Título da tarefa
+-   **description:** Descrição da tarefa
+-   **status:** Status da tarefa (pendente, em andamento, concluído)
+-   **created_at:** Data e hora de criação da tarefa
+-   **updated_at:** Data e hora da última atualização da tarefa
 
 **5. Próximos passos:**
 
 Após criar o banco de dados e a tabela, você pode começar a inserir e gerenciar as tarefas do seu projeto utilizando, por exemplo, o insomnia.
-
-
 
 ## Utilizzo
 
@@ -78,5 +76,5 @@ Questo progetto è concesso in licenza sotto la Licenza MIT - consulta il file [
 
 ## Contatto
 
-- Email: albertomaffeii@gmail.com
-- Issues: [GitHub Issues](https://github.com/albertomaffeii/api-rest/issues)
+-   Email: albertomaffeii@gmail.com
+-   Issues: [GitHub Issues](https://github.com/albertomaffeii/api-rest/issues)

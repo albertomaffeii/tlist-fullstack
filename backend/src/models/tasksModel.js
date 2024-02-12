@@ -1,33 +1,48 @@
-const connection = require('./connection');
+const connection = require("./connection");
 
-const getAll = async() => {
-    const [tasks] = await connection.execute('SELECT * FROM tasks');
+const getAll = async () => {
+    const [tasks] = await connection.execute("SELECT * FROM tasks");
     return tasks;
 };
 
-const createTask = async(task) => {
-    const {title} = task;
+const createTask = async (task) => {
+    const { title } = task;
     const dateUTC = new Date(Date.now()).toUTCString();
-    const query = 'INSERT INTO tasks(title, status, created_at, updated_at) VALUES (?,?,?,?)';
+    const query =
+        "INSERT INTO tasks(title, status, created_at, updated_at) VALUES (?,?,?,?)";
 
-    const [createdTask] = await connection.execute(query, [title, 'pending', dateUTC, dateUTC]);
+    const [createdTask] = await connection.execute(query, [
+        title,
+        "pending",
+        dateUTC,
+        dateUTC,
+    ]);
 
-    return {insertId: createdTask.insertId};
-}
+    return { insertId: createdTask.insertId };
+};
 
-const deleteTask = async(id) => {
-    const removedTask = await connection.execute('DELETE FROM tasks WHERE id = ?', [id]);
+const deleteTask = async (id) => {
+    const removedTask = await connection.execute(
+        "DELETE FROM tasks WHERE id = ?",
+        [id]
+    );
     return removedTask;
 };
 
-const updateTask = async(id, task) => {
+const updateTask = async (id, task) => {
     const dateUTC = new Date(Date.now()).toUTCString();
 
-    const query = 'UPDATE tasks SET title=?, status=?, updated_at=? WHERE id = ?';
+    const query =
+        "UPDATE tasks SET title=?, status=?, updated_at=? WHERE id = ?";
 
-    const {title, status} = task;
+    const { title, status } = task;
 
-    const [updatedTask] = await connection.execute(query, [title, status, dateUTC, id]);
+    const [updatedTask] = await connection.execute(query, [
+        title,
+        status,
+        dateUTC,
+        id,
+    ]);
     return updatedTask;
 };
 
@@ -37,4 +52,3 @@ module.exports = {
     deleteTask,
     updateTask,
 };
-
